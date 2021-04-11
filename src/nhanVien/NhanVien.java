@@ -57,6 +57,11 @@ public class NhanVien {
         this.email = email;
     }
 
+    public double getmoney(){
+        double sum=0;
+        return sum;
+    };
+
     public String toString(){
         String thongtin = "Mã nhân viên : " + this.maNV +
                            "Họ và tên : "    + this.fullName +

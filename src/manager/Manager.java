@@ -93,11 +93,12 @@ public class Manager {
         double sum=0;
         NhanVien a ;
         for (int i = 0; i <this.getNhanvienPart().length ; i++) {
-            if (this.getNhanvienFull()[i]!=null){
+            if (this.getNhanvienPart()[i]!=null){
                 a=this.getNhanvienPart()[i];
                 sum += ((NhanVienPart)a).getMoney();
             }else{
-                 break;
+
+                break;
             }
         }
         return sum;
