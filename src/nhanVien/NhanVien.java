@@ -1,6 +1,6 @@
 package nhanVien;
 
-public class NhanVien {
+public  abstract class NhanVien {
     private String maNV;
     private String fullName;
     private int age;
@@ -57,17 +57,16 @@ public class NhanVien {
         this.email = email;
     }
 
-    public double getmoney(){
-        double sum=0;
-        return sum;
-    };
+    public abstract double getMoney();
 
-    public String toString(){
-        String thongtin = "Mã nhân viên : " + this.maNV +
-                           "Họ và tên : "    + this.fullName +
-                            "Tuổi: "    + this.age +
-                            "Số điện thoại: "    + this.phone +
-                            "Email : "    + this.email ;
-        return thongtin;
+    @Override
+    public String toString() {
+        return "NhanVien{" +
+                "maNV='" + maNV + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", age=" + age +
+                ", phone=" + phone +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

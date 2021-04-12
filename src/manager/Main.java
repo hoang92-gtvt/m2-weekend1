@@ -9,7 +9,8 @@ public class Main {
 
 
         NhanVien[] arrNhanvien = new NhanVien [1];
-        arrNhanvien[0] = new NhanVien("M000","Nguyễn Văn A", 29, 9601223, "@gmail.com");
+        arrNhanvien[0] = new NhanVienFull("M000","Nguyễn Văn A", 29, 9601223, "@gmail.com",10000000,5000000, 100000 );
+
 
         Manager manager1 = new Manager();
         manager1.setArrNhanVien(arrNhanvien);

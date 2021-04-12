@@ -46,4 +46,14 @@ public class NhanVienFull extends NhanVien {
     public double getMoney(){
         return this.getGossMoney()+ this.getBonusMoney() -this.getFailMoney();
     }
+
+    @Override
+    public String toString() {
+        return  super.toString()+
+                "NhanVienFull{" +
+                "gossMoney=" + gossMoney +
+                ", bonusMoney=" + bonusMoney +
+                ", failMoney=" + failMoney +
+                '}';
+    }
 }

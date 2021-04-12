@@ -26,23 +26,41 @@ public class Manager {
         }
     }
 
+//    public NhanVien[] addNhanvien(NhanVien nv1){
+//        NhanVien[] arr = new NhanVien[this.getArrNhanVien().length +1];
+//        for (int i = 0; i <arr.length-1 ; i++) {
+//            arr[i]= this.getArrNhanVien()[i];
+//
+//        }
+//        arr[arr.length-1]= nv1;
+//        this.setArrNhanVien(arr);
+//        return arr;
+//
+//    }
     public NhanVien[] addNhanvien(NhanVien nv1){
         NhanVien[] arr = new NhanVien[this.getArrNhanVien().length +1];
         for (int i = 0; i <arr.length-1 ; i++) {
             arr[i]= this.getArrNhanVien()[i];
 
         }
-        arr[arr.length-1]= nv1;
+            if(nv1 instanceof NhanVienFull){
+                NhanVienFull a = (NhanVienFull)nv1;
+                arr[arr.length-1]= a;
+            } else{
+                NhanVienPart a = (NhanVienPart)nv1;
+                arr[arr.length-1]= a;
+            }
         this.setArrNhanVien(arr);
         return arr;
 
     }
-    public NhanVien[] getNhanvienFull(){
-        NhanVien[] arr = new NhanVien[this.getArrNhanVien().length];
+
+    public NhanVienFull[] getNhanvienFull(){
+        NhanVienFull[] arr = new NhanVienFull[this.getArrNhanVien().length];
         int count =0;
         for (int i = 0; i <arr.length ; i++) {
             if(this.getArrNhanVien()[i] instanceof NhanVienFull) {
-                arr[count] = this.getArrNhanVien()[i];
+                arr[count] = (NhanVienFull) this.getArrNhanVien()[i];
                 count++;
             }
         }
@@ -71,7 +89,7 @@ public class Manager {
         for (int i = 0; i <arrname.length ; i++) {
             if (this.getNhanvienFull()[i]!=null){
                 a=this.getNhanvienFull()[i];
-                sum+= ((NhanVienFull)a).getMoney();
+                sum+= a.getMoney();
             }else{
                 index=i;
                 break;
@@ -81,7 +99,7 @@ public class Manager {
         int count=0;
         for (int i = 0; i <index ; i++) {
             a=this.getNhanvienFull()[i];
-            if( ((NhanVienFull)a).getMoney() < avenger){
+            if( a.getMoney() < avenger){
                 arrname[count]=a.getFullName();
             }
         }

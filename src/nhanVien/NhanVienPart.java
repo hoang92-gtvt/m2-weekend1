@@ -15,9 +15,17 @@ public class NhanVienPart extends NhanVien {
     public void setWorkTime(double workTime) {
         this.workTime = workTime;
     }
+
     public double getMoney(){
 
         return this.getWorkTime()*100000;
     }
 
+    @Override
+    public String toString() {
+        return  super.toString()+
+                "NhanVienPart{" +
+                "workTime=" + workTime +
+                '}';
+    }
 }
