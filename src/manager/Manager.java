@@ -13,43 +13,22 @@ public class Manager {
     public NhanVien[] getArrNhanVien() {
         return arrNhanVien;
     }
-
     public void setArrNhanVien(NhanVien[] arrNhanVien) {
         this.arrNhanVien = arrNhanVien;
     }
-
-
-    public void show(NhanVien[] arr ){
-
-        for (int i = 0; i < arr.length ; i++) {
-            System.out.println(arr[i]);
+    public void show(){
+        for (int i = 0; i < this.arrNhanVien.length ; i++) {
+            System.out.println(arrNhanVien[i]);
         }
     }
 
-//    public NhanVien[] addNhanvien(NhanVien nv1){
-//        NhanVien[] arr = new NhanVien[this.getArrNhanVien().length +1];
-//        for (int i = 0; i <arr.length-1 ; i++) {
-//            arr[i]= this.getArrNhanVien()[i];
-//
-//        }
-//        arr[arr.length-1]= nv1;
-//        this.setArrNhanVien(arr);
-//        return arr;
-//
-//    }
-    public NhanVien[] addNhanvien(NhanVien nv1){
+    public NhanVien[] addNhanvien(NhanVien newNhanvien){
         NhanVien[] arr = new NhanVien[this.getArrNhanVien().length +1];
         for (int i = 0; i <arr.length-1 ; i++) {
             arr[i]= this.getArrNhanVien()[i];
 
         }
-            if(nv1 instanceof NhanVienFull){
-                NhanVienFull a = (NhanVienFull)nv1;
-                arr[arr.length-1]= a;
-            } else{
-                NhanVienPart a = (NhanVienPart)nv1;
-                arr[arr.length-1]= a;
-            }
+        arr[arr.length-1]= newNhanvien;
         this.setArrNhanVien(arr);
         return arr;
 
@@ -96,6 +75,7 @@ public class Manager {
             }
         }
         double avenger = sum/index;
+
         int count=0;
         for (int i = 0; i <index ; i++) {
             a=this.getNhanvienFull()[i];
@@ -103,7 +83,6 @@ public class Manager {
                 arrname[count]=a.getFullName();
             }
         }
-
         return arrname;
     }
 
