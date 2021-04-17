@@ -49,8 +49,8 @@ public class NhanVienFull extends NhanVien {
 
     @Override
     public String toString() {
-        return  super.toString()+
-                "NhanVienFull{" +
+        return  "{"+
+                super.toString()+
                 "gossMoney=" + gossMoney +
                 ", bonusMoney=" + bonusMoney +
                 ", failMoney=" + failMoney +

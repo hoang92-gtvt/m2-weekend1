@@ -23,8 +23,8 @@ public class NhanVienPart extends NhanVien {
 
     @Override
     public String toString() {
-        return  super.toString()+
-                "NhanVienPart{" +
+        return  "{"+
+                super.toString()+
                 "workTime=" + workTime +
                 '}';
     }

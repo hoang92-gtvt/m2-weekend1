@@ -61,12 +61,12 @@ public  abstract class NhanVien {
 
     @Override
     public String toString() {
-        return "NhanVien{" +
+        return
                 "maNV='" + maNV + '\'' +
                 ", fullName='" + fullName + '\'' +
                 ", age=" + age +
                 ", phone=" + phone +
-                ", email='" + email + '\'' +
-                '}';
+                ", email='" + email + '\'';
+
     }
 }

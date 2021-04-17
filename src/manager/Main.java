@@ -39,17 +39,25 @@ public class Main {
         director1.addNhanvien(nv2);
         director1.addNhanvien(nv3);
 
-//        director1.showListNhanVien();
-//        System.out.println("--------------");
+        director1.showListNhanVien();
+        System.out.println("--------------");
 //        director1.showListNhanVienFull();
 //        System.out.println("--------------");
 //        director1.showListNhanVienPart();
 //        System.out.println("--------------");
-        double sumMoney = director1.getSumMoney();
-        System.out.println(nv1.getMoney());
-        System.out.println(sumMoney);
 
+//        double sumMoney = director1.getSumMoney();
+//        System.out.println(nv1.getMoney());
+//        System.out.println(sumMoney);
+        director1.sortListNhanVien();
+        System.out.println("Danh sach nhân viên sau khi sort");
+        director1.showListNhanVien();
 
+        System.out.println("--------------------------------------");
+        String name1 = director1.listNhanVien.get(2).getFullName();
+        String name2 = director1.getNhanVienByName().getFullName();
+        System.out.println(name1);
+        System.out.println(name2);
     }
 }
 
